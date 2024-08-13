@@ -3,7 +3,7 @@
 This imports a list of MAC addresses to a pool in BlueCat Address Manager.
 
 - Install UI.Vision's browser extension https://ui.vision/
-- Import the file bluecat-bulkmac-import in UI.Vision's browser extension.
+- Import the file bluecat-bulkmac-import.json in UI.Vision's browser extension.
 - In the imported file, edit the label value of line 12 (`select` line, `label=CHANGEME`) to match the name of the pool you want to import to.
 - Import maclist.csv in the CSV tab.  Format is one MAC address per line.
 - Close all browser windows, close the extension's window.

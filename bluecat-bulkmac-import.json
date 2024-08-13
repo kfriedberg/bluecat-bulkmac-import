@@ -1,0 +1,150 @@
+{
+  "Name": "bluecat-bulkmac-import",
+  "CreationDate": "2024-8-13",
+  "Commands": [
+    {
+      "Command": "store",
+      "Target": "1200",
+      "Value": "!timeout_macro",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "fast",
+      "Value": "!replayspeed",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Read MAC list",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "csvRead",
+      "Target": "maclist.csv",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "Status = ${!csvReadStatus}, line = ${!csvReadLineNumber}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "while",
+      "Target": "${!csvReadStatus} == \"OK\"",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "status = ${!csvReadStatus}, line = ${!csvReadLineNumber}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "Fill form on page",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "Inside subroutine: Status = ${!csvReadStatus}, Line = ${!csvReadLineNumber}",
+      "Value": "green",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "id=inputName",
+      "Value": "${!COL1}",
+      "Targets": [
+        "id=inputName",
+        "name=inputName",
+        "xpath=//*[@id=\"inputName\"]",
+        "xpath=//input[@id='inputName']",
+        "xpath=//td/input",
+        "css=#inputName"
+      ],
+      "Description": ""
+    },
+    {
+      "Command": "click",
+      "Target": "id=RadioGroup1",
+      "Value": "",
+      "Targets": [
+        "id=RadioGroup1",
+        "name=RadioGroup",
+        "xpath=//*[@id=\"RadioGroup1\"]",
+        "xpath=//input[@id='RadioGroup1']",
+        "xpath=//tr[2]/td/input",
+        "css=#RadioGroup1"
+      ],
+      "Description": ""
+    },
+    {
+      "Command": "select",
+      "Target": "id=macPoolId",
+      "Value": "label=CHANGEME",
+      "Targets": [
+        "id=macPoolId",
+        "name=macPoolId",
+        "xpath=//*[@id=\"macPoolId\"]",
+        "xpath=//select[@id='macPoolId']",
+        "xpath=//select",
+        "css=#macPoolId"
+      ],
+      "Description": ""
+    },
+    {
+      "Command": "clickAndWait",
+      "Target": "id=insertButton_0",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "pause // 1000",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "return Number(${!csvReadLineNumber})+1",
+      "Value": "!csvReadLineNumber",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "true",
+      "Value": "!errorIgnore",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "Reading CSV line No.  ${!csvReadLineNumber} ",
+      "Value": "!errorIgnore",
+      "Description": ""
+    },
+    {
+      "Command": "csvRead",
+      "Target": "maclist.csv",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "false",
+      "Value": "!errorIgnore",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}

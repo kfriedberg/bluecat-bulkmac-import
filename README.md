@@ -10,4 +10,4 @@ This imports a list of MAC addresses to a pool in BlueCat Address Manager.
 - Open a browser and navigate to the MAC adding page in Proteus.
 - Open the UI.Vision browser extension, choose bluecat-bulkmac-import, then click Play Macro.
 
-Note: script timeout on line 1 is set to 20 minutes/1200 seconds, which should be fine for several hundred MACs.
+Note: script timeout on line 1 is set to 20 minutes/1200 seconds, which should be fine for several hundred MACs. Increase if needed.
